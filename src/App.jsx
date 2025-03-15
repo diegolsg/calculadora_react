@@ -1,7 +1,7 @@
 import { useState } from 'react';
 // import reactLogo from './assets/react.svg';
 // import viteLogo from '/vite.svg';
-// import './App.css';
+ import './App.css';
 
 function CalculadoraApp() {
   const [num1, setNum1] = useState("");
@@ -60,92 +60,48 @@ function CalculadoraApp() {
 
   return (
     <>
+    
       <h1>Calculadora</h1>
       <h2>Seleccione la operación que desea realizar</h2>
+      
       <form>
         <label>
-          <input
-            type="checkbox"
-            name="suma"
-            checked={operaciones.suma}
-            onChange={handleCheckboxChange}
-          />
-          Suma
+          <input type="checkbox" name="suma" checked={operaciones.suma} onChange={handleCheckboxChange}/>Suma
         </label>
         <br />
         <label>
-          <input
-            type="checkbox"
-            name="resta"
-            checked={operaciones.resta}
-            onChange={handleCheckboxChange}
-          />
-          Resta
+          <input type="checkbox" name="resta" checked={operaciones.resta} onChange={handleCheckboxChange}/>Resta
         </label>
         <br />
         <label>
-          <input
-            type="checkbox"
-            name="multiplicacion"
-            checked={operaciones.multiplicacion}
-            onChange={handleCheckboxChange}
-          />
-          Multiplicación
+          <input type="checkbox"
+            name="multiplicacion" checked={operaciones.multiplicacion} onChange={handleCheckboxChange}/>Multiplicación
         </label>
         <br />
         <label>
-          <input
-            type="checkbox"
-            name="division"
-            checked={operaciones.division}
-            onChange={handleCheckboxChange}
-          />
-          División
+          <input type="checkbox" name="division" checked={operaciones.division} onChange={handleCheckboxChange}/>División
         </label>
         <br />
         <label>
-          <input
-            type="checkbox"
-            name="potencia"
-            checked={operaciones.potencia}
-            onChange={handleCheckboxChange}
-          />
-          Potencia
+          <input type="checkbox" name="potencia" checked={operaciones.potencia} onChange={handleCheckboxChange} />Potencia
         </label>
         <br />
         <label>
-          <input
-            type="checkbox"
-            name="raiz"
-            checked={operaciones.raiz}
-            onChange={handleCheckboxChange}
-          />
-          Raíz
+          <input type="checkbox" name="raiz" checked={operaciones.raiz} onChange={handleCheckboxChange}/>Raíz
         </label>
       </form>
       <br />
-      <input
-        type="text"
-        value={num1}
-        onChange={(e) => setNum1(e.target.value)}
-        placeholder="Número 1"
-      />
-      <input
-        type="text"
-        value={num2}
-        onChange={(e) => setNum2(e.target.value)}
-        placeholder="Número 2"
-        disabled={operaciones.raiz} // Deshabilitar segundo número si es raíz
-      />
-      <button type="button" onClick={calcularResultado}>
-        Calcular
-      </button>
+      <input type="text" value={num1} onChange={(e) => setNum1(e.target.value)} placeholder="Número 1" />
+      <input  type="text"value={num2} onChange={(e) => setNum2(e.target.value)} placeholder="Número 2" disabled={operaciones.raiz} />
+      <br />
+      <button type="button" onClick={calcularResultado}> Calcular</button>
       <h3>Resultados:</h3>
       <ul>
         {resultado.map((res, index) => (
           <li key={index}>{res}</li>
         ))}
       </ul>
+    
     </>
   );
 }
